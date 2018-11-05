@@ -15,6 +15,18 @@ while game_over == 0:
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
+  elif x == 'left':
+    print()
+  elif x == 'right':
+    print()
+  elif x == 'up':
+    print()
+  elif x == 'down':
+    print()
+  elif x == 'grab':
+    print()
+  elif x == 'fight':
+    print()
   elif x == 'end':
     print("You killed yourself. How pityful.")
     game_over = 1
