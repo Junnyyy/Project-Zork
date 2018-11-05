@@ -12,4 +12,6 @@ while game_over == 0:
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help")
-    gamer_over = 1
+  elif x == 'suicide':
+    print("You killed yourself. How pityful.")
+    game_over = 1
