@@ -15,3 +15,5 @@ while game_over == 0:
   elif x == 'end':
     print("You killed yourself. How pityful.")
     game_over = 1
+  else
+    print("That is not a command.")
