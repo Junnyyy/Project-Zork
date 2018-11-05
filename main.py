@@ -11,7 +11,7 @@ print("Welcome unfortunate victim, this is a test of your skills in combat and h
 while game_over == 0:
   x = input("What do you do?")
   if x == 'help':
-    print("left, right, up, down, grab, fight, help")
-  elif x == 'suicide':
+    print("left, right, up, down, grab, fight, help, end")
+  elif x == 'end':
     print("You killed yourself. How pityful.")
     game_over = 1
