@@ -18,7 +18,8 @@ while not game_over:
   elif x == 'left':
     print()
   elif x == 'right':
-    print()
+    if x < 5:
+      user_room += 1
   elif x == 'up':
     print()
   elif x == 'down':
