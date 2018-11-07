@@ -28,9 +28,13 @@ while game_over == 0:
   elif x == 'left':
     if user_room > -1:
       user_room -= 1
+    else:
+      print("You run straight into a wall.")
   elif x == 'right':
     if user_room < 5:
       user_room += 1
+    else:
+      print("You run straight into a wall")
   elif x == 'up':
     if user_floor[user_room] == 'stairs up':
       if user_floor == floor1:
