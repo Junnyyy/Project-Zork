@@ -13,7 +13,15 @@ print("Welcome unfortunate victim, this is a test of your skills in combat and h
 # if statements for game function
 while game_over == 0:
   if user_floor[user_room] == 'nothing':
-    print("This room has nothing in it")
+    print("This room has nothing in it.")
+  elif user_floor[user_room] == 'sword':
+    print("This room has a sword in it!")
+  elif user_floor[user_room] == 'magic stones':
+    print("This room has magic stones in it!")
+  elif user_floor[user_room] == 'stairs up':
+    print("This room has stairs going up.")
+  elif user_floor[user_room] == 'stairs down':
+    print("This room has stairs going down.")
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
