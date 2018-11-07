@@ -32,7 +32,13 @@ while game_over == 0:
     if user_room < 5:
       user_room += 1
   elif x == 'up':
-    print()
+    if user_floor[user_room] == 'stairs up':
+      if user_floor == floor1:
+        user_floor = floor2
+        print("You went up the stairs")
+      elif user_floor == floor2:
+        user_floor = floor3
+        print("You went up the stairs")
   elif x == 'down':
     print()
   elif x == 'grab':
