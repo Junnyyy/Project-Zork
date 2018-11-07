@@ -48,7 +48,14 @@ while game_over == 0:
         user_floor = floor2
         print("You went down the stairs")
   elif x == 'grab':
-    print()
+    if user_floor[user_room] == 'sword':
+      user_floor[user_room] = "nothing"
+      slots = 0
+      if not inventory[slots] == 0:
+        slots += 1
+      else:
+        inventory[slots] = "sword"
+        print("You picked up a sword")
   elif x == 'fight':
     print()
   elif x == 'end':
