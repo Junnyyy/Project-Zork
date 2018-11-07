@@ -16,11 +16,10 @@ while game_over == 0:
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
   elif x == 'left':
-    if x > -1:
+    if user_room > -1:
       user_room -= 1
-
   elif x == 'right':
-    if x < 5:
+    if user_room < 5:
       user_room += 1
   elif x == 'up':
     print()
