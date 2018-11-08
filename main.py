@@ -2,7 +2,7 @@ import random
 
 # Floor 1-3
 floor3 = ['sword', 'stairs down', 'nothing', 'boss monster', 'prize']
-floor2 = ['magic stones', 'stairs up', 'monster', 'stairs down', 'nothing']
+floor2 = ['magic stone', 'stairs up', 'monster', 'stairs down', 'nothing']
 floor1 = ['nothing', 'sword', 'monster', 'stairs up', 'sword']
 # inventory, user room, and user floor variables 
 inventory = [0,0,0]
@@ -16,7 +16,7 @@ while game_over == 0:
     print("This room has nothing in it.")
   elif user_floor[user_room] == 'sword':
     print("This room has a sword in it!")
-  elif user_floor[user_room] == 'magic stones':
+  elif user_floor[user_room] == 'magic stone':
     print("This room has magic stones in it!")
   elif user_floor[user_room] == 'stairs up':
     print("This room has stairs going up.")
@@ -53,15 +53,23 @@ while game_over == 0:
         print("You went down the stairs")
   elif x == 'grab':
     if user_floor[user_room] == 'sword':
-      user_floor[user_room] = "nothing"
       slots = 0
-      if not inventory[slots] == 0:
+      if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
         slots += 1
+        user_floor[user_room] = "nothing"
       else:
         inventory[slots] = "sword"
         print("You picked up a sword")
+    if user_floor[user_room] == 'magic stone':
+      user_floor[user_room] = "nothing"
+      slots = 0
+      if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
+        slots += 1
+      else:
+        inventory[slots] = "magic stone"
+        print("You picked up a magic stone")
   elif x == 'fight':
-    print()
+    print(inventory)
   elif x == 'end':
     print("You killed yourself. How pityful.")
     game_over = 1
