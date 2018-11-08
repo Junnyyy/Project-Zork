@@ -54,20 +54,26 @@ while game_over == 0:
   elif x == 'grab':
     if user_floor[user_room] == 'sword':
       slots = 0
-      if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
-        slots += 1
-        user_floor[user_room] = "nothing"
-      else:
-        inventory[slots] = "sword"
-        print("You picked up a sword")
+      var = 0
+      while var == 0:
+        if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
+          slots += 1
+        else:
+          inventory[slots] = "sword"
+          print("You picked up a sword")
+          var = 1
+          user_floor[user_room] = "nothing"
     if user_floor[user_room] == 'magic stone':
-      user_floor[user_room] = "nothing"
       slots = 0
-      if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
-        slots += 1
-      else:
-        inventory[slots] = "magic stone"
-        print("You picked up a magic stone")
+      var = 0
+      while var == 0:
+        if inventory[slots] == 'sword' or inventory[slots] == 'magic stone':
+          slots += 1
+        else:
+          inventory[slots] = "magic stone"
+          print("You picked up a magic stone")
+          var = 1
+          user_floor[user_room] = "nothing"
   elif x == 'fight':
     print(inventory)
   elif x == 'end':
