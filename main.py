@@ -9,6 +9,7 @@ inventory = [0,0,0]
 user_room = 0
 user_floor = floor1
 game_over = 0
+last = 'grab'
 print("Welcome unfortunate victim, this is a test of your skills in combat and how fast you can think on your feet.  Currently you are locked in a warehouse there are 3 normal 'guests' and one very very special 'guest'. Can you defeat the 'guests' and retrieve the key to escape?  Which room on this floor would you like to go to? Or maybe you'd like to go to a different floor? Type 'help' for the commands.\n")
 # if statements for game function
 while game_over == 0:
@@ -22,16 +23,22 @@ while game_over == 0:
     print("This room has stairs going up.")
   elif user_floor[user_room] == 'stairs down':
     print("This room has stairs going down.")
+  elif user_floor[user_room] == 'monster':
+    print("There is a monster in the room with you.")
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
   elif x == 'left':
-    if user_room > -1:
+    if user_floor[user_room] == 'monster' and last == 'left':
+      print("You can pass the monster without a fight.")
+    elif user_room > -1:
       user_room -= 1
     else:
       print("You run straight into a wall.")
   elif x == 'right':
-    if user_room < 5:
+    if user_floor[user_room] == 'monster' and last == 'right':
+      print("You can pass the monster without a fight.")
+    elif user_room < 5:
       user_room += 1
     else:
       print("You run straight into a wall")
@@ -75,9 +82,10 @@ while game_over == 0:
           var = 1
           user_floor[user_room] = "nothing"
   elif x == 'fight':
-    print(inventory)
+    print(last)
   elif x == 'end':
     print("You killed yourself. How pityful.")
     game_over = 1
   else:
     print("That is not a command.")
+  last = x
