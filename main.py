@@ -89,9 +89,20 @@ while game_over == 0:
         if inventory[slots] == '0' or inventory[slots] == 'magic stone':
           slots -= 1
         else:
-          user_floor[user_room] == 'nothing'
+          user_floor[user_room] = 'nothing'
           inventory[slots] = 0
           print("You killed the monster, but broke your sword in the process")
+          var = 
+     elif user_floor[user_room] == 'boss monster':
+      slots = 2
+      var = 0
+      while var == 0:
+        if inventory[slots] == '0' or inventory[slots] == 'sword':
+          slots -= 1
+        else:
+          user_floor[user_room] = 'nothing'
+          inventory[slots] = 0
+          print("You killed the monster, but broke your magic stone in the process")
           var = 1
   elif x == 'end':
     print("You killed yourself. How pityful.")
