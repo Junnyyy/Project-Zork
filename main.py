@@ -25,6 +25,8 @@ while game_over == 0:
     print("This room has stairs going down.")
   elif user_floor[user_room] == 'monster':
     print("There is a monster in the room with you.")
+  else user_floor[user_room] == 'boss monster':
+    print("The boss looks at you.")
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
@@ -36,7 +38,7 @@ while game_over == 0:
     else:
       print("You run straight into a wall.")
   elif x == 'right':
-    if user_floor[user_room] == 'monster' and (last == 'right' or last == 'grab' or last == 'up' or last == 'down'):
+    if user_floor[user_room] == 'monster' or user_floor[user_room] == 'boss monster' and (last == 'right' or last == 'grab' or last == 'up' or last == 'down'):
       print("You can pass the monster without a fight.")
     elif user_room < 5:
       user_room += 1
@@ -102,7 +104,7 @@ while game_over == 0:
         else:
           user_floor[user_room] = 'nothing'
           inventory[slots] = 0
-          print("You killed the monster, but broke your magic stone in the process")
+          print("You killed the boss, but broke your magic stone in the process")
           var = 1
   elif x == 'end':
     print("You killed yourself. How pityful.")
