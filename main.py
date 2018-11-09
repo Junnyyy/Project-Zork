@@ -93,7 +93,7 @@ while game_over == 0:
           inventory[slots] = 0
           print("You killed the monster, but broke your sword in the process")
           var = 1
-     elif user_floor[user_room] == 'boss monster':
+    elif user_floor[user_room] == 'boss monster':
       slots = 2
       var = 0
       while var == 0:
