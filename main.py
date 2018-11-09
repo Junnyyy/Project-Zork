@@ -25,8 +25,11 @@ while game_over == 0:
     print("This room has stairs going down.")
   elif user_floor[user_room] == 'monster':
     print("There is a monster in the room with you.")
-  else user_floor[user_room] == 'boss monster':
+  elif user_floor[user_room] == 'boss monster':
     print("The boss looks at you.")
+  elif user_floor[user_room] == 'prize':
+    print("Congrats, you obtained the prize of finishing the game")
+    game_over = 1
   x = input("What do you do?")
   if x == 'help':
     print("left, right, up, down, grab, fight, help, end")
